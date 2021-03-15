@@ -1,0 +1,15 @@
+DATA SEGMENT
+     MESSAGE_MAYOR DB "Eres mayor de edad$"
+     MESSAGE_MENOR DB "Eres mayor de edad$"
+ENDS
+CODE SEGMENT  
+    ASSUME DS:DATA CS:CODE
+START:
+      MOV AX,DATA
+      MOV DS,AX
+      LEA DX, MESSAGE_MENOR       
+      MOV AH,9h
+      INT 21H
+      ;MOV AH,4CH
+      ;INT 21H      
+ENDS
